@@ -1,0 +1,69 @@
+@import "../../scss/mixins";
+@import "../../scss/variable";
+.header{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    padding: 30px 20px 20px;
+    background-color: transparent;
+    transition: all 0.5s;
+    @include Responsive(LG){
+        padding-top: 20px;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .main-nav{
+        transition: all 0.5s;
+        @include Responsive(LG){
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px 28px;
+            box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
+        }
+    }
+    .navbar-nav{
+        margin-left: auto;
+        .nav-item{
+            @include Responsive(LG){
+                border-top: 1px solid #eee;
+            }
+        }
+        .nav-link{
+            margin: 8px 20px;
+            color: $color--title;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            &:hover{
+                text-decoration: none;
+                color: $color--main;
+            }
+        }
+        .header__main__btn__1{
+            margin-left: 30px;
+            background-color: $color--main;
+            color: #fff;
+            display: inline-block;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.5s;
+            padding: 15px 45px;
+            border-radius: 10px;
+            text-decoration: none;
+            @include Responsive(LG){
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            &:hover{
+                transform:scale(1.05);
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}

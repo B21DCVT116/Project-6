@@ -1,0 +1,88 @@
+@import "../../scss/mixins";
+@import "../../scss/variable";
+.login{
+    margin-top: 125px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(67,103,90,0.2);
+    &__images{
+        width: 100%;
+        position: relative;
+        border-right: 1px solid $color--title;
+        @include Responsive(LG){
+            display: none;
+        }
+        & img:nth-child(1){
+            position: absolute;
+            max-width: 50%;
+            top: 10%;
+            left: 10%;
+            z-index: -1;
+        }
+        & img:nth-child(2){
+            width: 50%;
+        }
+        & img:nth-child(3){
+            position: absolute;
+            max-width: 50%;
+            top: 50%;
+            right: 10%;
+            z-index: -1;
+        }
+    }
+    &-shape-02{
+        @include Responsive(LG){
+            right: -5%!important;
+        }
+    }
+    &__content__form{
+        a{
+            text-decoration: none;
+        }
+        &__title{
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        &__login{
+            margin: 10px 0;
+            input{
+                margin-right: 10px;
+                border: 1px solid $color--title;
+                border-radius: 10px;
+                padding: 5px 20px;
+                background: transparent;
+                transition: all 1s;
+                &:hover::placeholder{
+                    transform: scale(1.05);
+                }
+                &::placeholder{
+                    text-align: center;
+                    color: $color--title;
+                }
+            }
+            .icon__login{
+                font-size: 25px;
+            }
+        }
+        &__logup{
+            font-size: 16px;
+            display: inline-block;
+            margin: 0 5px 10px 0;
+            font-weight: 400;
+            line-height: 28px;
+            color: $color--title;
+        }   
+        &__submit{
+            background-color: $color--main;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 10px;
+            color: $color--body--2;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }     
+    }
+}

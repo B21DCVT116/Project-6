@@ -1,0 +1,29 @@
+@import "../../scss/mixins";
+@import "../../scss/variable";
+.menu{
+    position: fixed;
+    left: 10px;
+    top: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(67,103,90,0.1);
+    width: 256px;
+    &__fold{
+        width: 100px;
+        transition: all 0.5s;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-btn-primary {
+    background-color: $color--main;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+    background-color: $color--main;
+    transform: scale(1.1);
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-menu-light.ant-menu-root.ant-menu-vertical,:where(.css-dev-only-do-not-override-gzal6t).ant-menu-light.ant-menu-root.ant-menu-inline{
+    border: none;
+}

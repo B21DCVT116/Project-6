@@ -1,0 +1,136 @@
+@import "../../scss/mixins";
+@import "../../scss/variable";
+
+.home{
+    position: relative;
+    padding: 150px 0 100px;
+    overflow: hidden;
+    @include Responsive(LG){
+        text-align: center;
+    }
+    &__shape{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        & svg:first-child{
+            position: absolute;
+            width: 48%;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+        & svg:last-child{
+            position: absolute;
+            width: 10%;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__content{
+        &__subtitle{
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: $color--main;
+            letter-spacing: 2px;
+        }
+        &__title{
+            margin-bottom: 25px;
+            font-size: 50px;
+            font-weight: 600;
+            letter-spacing: 0px;
+        }
+        &__desc{
+            font-size: 17px;
+            margin-bottom: 40px;
+            color: $color--desc;
+            line-height: 37px;
+            font-weight: 400;
+        }
+    }
+    &__image{
+        margin-top: -40px;
+        @include Responsive(LG){
+            margin: 0 auto 40px;
+            width: 80%;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+    &__search{
+        position: relative;
+        margin:  5px;
+        input{
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background-color: rgba(253, 0, 219, 0.3);
+            padding: 15px 20px;
+            transition: all 0.3s;
+        }
+        label{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            .icon__search{
+                font-size: 25px;
+            }
+        }
+        &:hover,:focus{
+            input{
+                box-shadow: 0 0 30px rgba(67,103,90,0.2);
+            }
+        }
+    }
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
+    background-color: rgba(253, 0, 219, 0.3);
+    box-shadow: 0 0 30px rgba(67,103,90,0.2);
+    border: none;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color:rgba(253, 0, 219, 0.3);
+    border: none;
+    height: 54px;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-select-multiple .ant-select-selection-item {
+    border: 1px solid $color--title;
+    height: auto;
+    padding: 5px 10px;
+}
+.ant-col.ant-col-5 .css-dev-only-do-not-override-gzal6t .ant-select .ant-select-arrow .anticon{
+        margin-top: 23px ;
+        font-size: 20px;
+        color: #212529;
+}
+.ant-col.ant-col-21 .css-dev-only-do-not-override-gzal6t .ant-select .ant-select-arrow .anticon >svg {
+    font-size: 20px;
+    color: #212529;
+}
+ 
+:where(.css-dev-only-do-not-override-gzal6t).ant-btn {
+    height: 54px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: none;
+    background-color:rgba(253, 0, 219, 0.3);
+    color: $color--title;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-btn:hover {
+    box-shadow: 0 0 30px rgba(67,103,90,0.2);
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    border:none;
+    color: $color--title;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-select .ant-select-selection-placeholder {
+    color: $color--desc;
+}

@@ -1,0 +1,93 @@
+@import "../../scss/mixins";
+@import "../../scss/variable";
+.dashboard{
+    margin: 135px 0 50px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(67,103,90,0.2);
+    background-color: rgba(0,0,0,0.7);
+    &::before{
+        content: "";
+        position: absolute;
+        width: 140%;
+        height: 140%;
+        background-image: url(../../images/blog-post-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        top: -20%;
+        left: -20%;
+        z-index: -1;
+    }
+    &:nth-child(2){
+        margin-top: 0;
+        &::before{
+            background-image: url(../../images/blog-post-3.jpg);
+        }
+    }
+    &:nth-child(3){
+        margin-top: 0;
+        &::before{
+            background-image: url(../../images/blog-post-2.jpg);
+        }
+    }
+    &__content{
+        @include Responsive(LG){
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+    &__item{
+        color: $color--body--1;
+        text-align: center;
+        position: relative;
+        height: 350px;
+        width: 100%;
+        float: left;
+        text-decoration: none;
+        @include Responsive(LG){
+            height: auto;
+            padding: 20px 0;
+        }
+        strong{
+            display: block;
+            font-size: 36px;
+            font-weight: 600;
+            margin: 120px 0 10px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            @include Responsive(LG){
+                margin-top: 0;
+            }
+        }
+        &:hover strong{
+            margin-top: 105px;
+            @include Responsive(LG){
+                margin-top: 0;
+            }
+        }
+        p{
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        &::after{
+            content: " ";
+            position: absolute;
+            background-image: url(https://templatemo.com/templates/templatemo_535_softy_pinko/assets/images/circle-dec.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 70%;
+            height: 32px;
+            top: 45%;
+            left: 70%;
+            @include Responsive(LG){
+                display: none;
+            }
+        }
+    }
+    & .col-lg-4:last-child &__item::after{
+        display: none;
+    }
+}
