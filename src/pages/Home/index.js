@@ -127,7 +127,7 @@ const Home = () => {
                                     <Form.Item name="tags">
                                         <Select
                                             options={tag}
-                                            multiple
+                                            mode="multiple"
                                             maxTagCount="responsive"
                                             placeholder="Tags"
                                         />
