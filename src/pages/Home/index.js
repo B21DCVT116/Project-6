@@ -7,45 +7,16 @@ import {
     Cascader,
     Col,
     Form,
-    Row
+    Row,
+    Select
 } from 'antd';
 import { getCookie } from "../../help/cookie"
 import { useEffect, useState } from 'react';
 import { getToken } from '../../services/userSevices';
 
 const Home = () => {
-    const tag = [
-        { label: 'HTML', value: 'HTML' },
-        { label: 'CSS', value: 'CSS' },
-        { label: 'Javascript', value: 'Javascript' },
-        { label: 'Database', value: 'Database' },
-        { label: 'JSON', value: 'JSON' },
-        { label: 'PHP', value: 'PHP' },
-        { label: 'Python', value: 'Python' },
-        { label: 'Java', value: 'Java' },
-        { label: 'SQL', value: 'SQL' },
-        { label: 'Angular', value: 'Angular' },
-        { label: 'NodeJS', value: 'NodeJS' },
-        { label: 'ReactJS', value: 'ReactJS' },
-        { label: 'VueJS', value: 'VueJS' },
-        { label: 'Django', value: 'Django' },
-        { label: 'JQuery', value: 'JQuery' },
-        { label: 'TypeScript', value: 'TypeScript' }
-    ]
-    const city = [
-    {
-        label: "Hà Nội",
-        value: "Hà Nội"
-    },
-    {
-        label: "Hồ Chí Minh",
-        value: "Hồ Chí Minh"
-    },
-    {
-        label: "Đà Nẵng",
-        value: "Đà Nẵng"
-    }
-];
+    const [tag,setTag] = useState([]);
+    const [city,setCity] = useState([]);
 
     const [company,setCompany] = useState([])
     const checkToken= async()=>{
@@ -55,24 +26,18 @@ const Home = () => {
             setCompany(companyToken);
         }
     }
-    // const getData = async ()=>{
-    //     const tagData = await getTagorCity("tags");
-    //     const cityData = await getTagorCity("city");
-    //     tagData.forEach(e => {
-    //         tag.push({
-    //             label:`${e.value}`,
-    //             value:`${e.value}`
-    //         })
-    //     });
-    //     cityData.forEach(e => {
-    //         city.push({
-    //             label:e.value,
-    //             value:e.value,
-    //         })
-    //     });
-    // }
+    const getData = async ()=>{
+        const tagData = await getTagorCity("tags");
+        const cityData = await getTagorCity("city");
+        if(tagData) {
+            setTag(tagData);
+        }
+        if(cityData) {
+            setCity(cityData);
+        }
+    }
     useEffect(()=>{
-        // getData();
+        getData();
         checkToken();
     },[])
     
@@ -149,7 +114,7 @@ const Home = () => {
                             <Col span={5}>
                                 <div className="home__search">
                                     <Form.Item name="city">
-                                        <Cascader
+                                        <Select
                                             options={city}
                                             maxTagCount="responsive"
                                             placeholder="City"
@@ -160,7 +125,7 @@ const Home = () => {
                             <Col span={21}>
                                 <div className="home__search">
                                     <Form.Item name="tags">
-                                        <Cascader
+                                        <Select
                                             options={tag}
                                             multiple
                                             maxTagCount="responsive"
